@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gatos API</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="loadCat()" expand="block">
+    Carregar Gato Aleatório
+  </ion-button>
+
+  @if (loading) {
+    <div style="text-align: center; margin: 20px;">
+      <ion-spinner></ion-spinner>
+    </div>
+  }
+
+  @if (catUrl) {
+    <ion-card>
+      <img [src]="catUrl" class="cat-image" >
+    </ion-card>
+  }
+
+     <ion-button routerLink="/home" expand="block">
+      Ir para Home
+    </ion-button>
+
+         <ion-button routerLink="/sobre" expand="block">
+      Ir para Sobre
+    </ion-button>
+</ion-content>
